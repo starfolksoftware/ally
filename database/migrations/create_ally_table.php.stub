@@ -8,12 +8,27 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('ally_table', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
 
-            // add fields
+            $table->unsignedBigInteger('team_id')->nullable();
+            
+            $table->string('type');
+            $table->string('name');
+            $table->json('meta');
 
             $table->timestamps();
+        });
+
+        Schema::create('contactables', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('contact_id');
+            $table->morphs('contactable');
+            $table->timestamps();
+
+            $table->unique(['contact_id', 'contactable_id', 'contactable_type'], 'contactables_ids_type_unique');
+            $table->foreign('contact_id')->references('id')->on('contacts')
+                  ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 };
