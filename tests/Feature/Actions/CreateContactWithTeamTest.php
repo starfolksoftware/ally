@@ -1,7 +1,7 @@
 <?php
 
-use StarfolkSoftware\Ally\Contracts\CreatesContacts;
 use StarfolkSoftware\Ally\Ally;
+use StarfolkSoftware\Ally\Contracts\CreatesContacts;
 use StarfolkSoftware\Ally\Tests\Mocks\TeamModel;
 use StarfolkSoftware\Ally\Tests\Mocks\TestUser;
 

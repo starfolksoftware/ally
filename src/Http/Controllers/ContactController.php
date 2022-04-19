@@ -2,11 +2,11 @@
 
 namespace StarfolkSoftware\Ally\Http\Controllers;
 
+use StarfolkSoftware\Ally\Ally;
 use StarfolkSoftware\Ally\Contact;
 use StarfolkSoftware\Ally\Contracts\CreatesContacts;
 use StarfolkSoftware\Ally\Contracts\DeletesContacts;
 use StarfolkSoftware\Ally\Contracts\UpdatesContacts;
-use StarfolkSoftware\Ally\Ally;
 
 class ContactController extends Controller
 {
