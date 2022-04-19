@@ -31,16 +31,6 @@ test('contact can be created', function () {
     $this->assertDatabaseHas('contacts', [
         'name' => 'Contact',
         'type' => 'customer',
-        'meta' => [
-            [
-                'label' => 'Email',
-                'value' => 'test@example.com',
-            ],
-            [
-                'label' => 'Phone',
-                'value' => '+1 (555) 555-5555',
-            ],
-        ],
     ]);
 });
 
@@ -52,16 +42,6 @@ test('contact can be updated', function () {
     $response = actingAs($user)->put(route('contacts.update', $contact), [
         'name' => 'Contact',
         'type' => 'customer',
-        'meta' => [
-            [
-                'label' => 'Email',
-                'value' => 'test@example.com',
-            ],
-            [
-                'label' => 'Phone',
-                'value' => '+1 (555) 555-5555',
-            ],
-        ],
         'redirect' => '/redirect/path',
     ]);
 
@@ -70,16 +50,6 @@ test('contact can be updated', function () {
     $this->assertDatabaseHas('contacts', [
         'name' => 'Contact',
         'type' => 'customer',
-        'meta' => [
-            [
-                'label' => 'Email',
-                'value' => 'test@example.com',
-            ],
-            [
-                'label' => 'Phone',
-                'value' => '+1 (555) 555-5555',
-            ],
-        ],
     ]);
 });
 

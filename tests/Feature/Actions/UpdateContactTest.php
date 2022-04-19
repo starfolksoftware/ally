@@ -20,6 +20,17 @@ it('can update a contact', function () {
         $contact,
         [
             'name' => 'Contact',
+            'type' => 'customer',
+            'meta' => [
+                [
+                    'label' => 'Email',
+                    'value' => 'test@example.com',
+                ],
+                [
+                    'label' => 'Phone',
+                    'value' => '+1 (555) 555-5555',
+                ],
+            ],
         ]
     );
 

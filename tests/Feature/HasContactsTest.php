@@ -48,7 +48,7 @@ it('can attach and detach contact to a model', function () {
         ->team_id->toBeNull()
         ->type->toBe($contact1->type)
         ->name->toBe($contact1->name)
-        ->rate->toBe($contact1->meta);
+        ->meta->toBe($contact1->meta);
 
     $product->detachContacts($contact1);
 
