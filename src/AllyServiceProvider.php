@@ -7,7 +7,6 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 use StarfolkSoftware\Ally\Actions\CreateContact;
 use StarfolkSoftware\Ally\Actions\DeleteContact;
 use StarfolkSoftware\Ally\Actions\UpdateContact;
-use StarfolkSoftware\Ally\Commands\AllyCommand;
 use StarfolkSoftware\Ally\Commands\InstallCommand;
 
 class AllyServiceProvider extends PackageServiceProvider

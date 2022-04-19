@@ -3,8 +3,8 @@
 namespace StarfolkSoftware\Ally\Actions;
 
 use Illuminate\Support\Facades\Validator;
-use StarfolkSoftware\Ally\Contracts\CreatesContacts;
 use StarfolkSoftware\Ally\Ally;
+use StarfolkSoftware\Ally\Contracts\CreatesContacts;
 
 class CreateContact implements CreatesContacts
 {

@@ -3,9 +3,9 @@
 namespace StarfolkSoftware\Ally\Actions;
 
 use Illuminate\Support\Facades\Validator;
+use StarfolkSoftware\Ally\Ally;
 use StarfolkSoftware\Ally\Contact;
 use StarfolkSoftware\Ally\Contracts\UpdatesContacts;
-use StarfolkSoftware\Ally\Ally;
 
 class UpdateContact implements UpdatesContacts
 {

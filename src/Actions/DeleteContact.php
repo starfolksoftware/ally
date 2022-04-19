@@ -2,9 +2,9 @@
 
 namespace StarfolkSoftware\Ally\Actions;
 
+use StarfolkSoftware\Ally\Ally;
 use StarfolkSoftware\Ally\Contact;
 use StarfolkSoftware\Ally\Contracts\DeletesContacts;
-use StarfolkSoftware\Ally\Ally;
 
 class DeleteContact implements DeletesContacts
 {
