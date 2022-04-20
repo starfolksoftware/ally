@@ -52,6 +52,18 @@ trait HasContacts
     }
 
     /**
+     * Scope query to a given type.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string $type
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOfType(Builder $query, string $type): Builder
+    {
+        return $query->where('type', $type);
+    }
+
+    /**
      * Scope query with all the given contacts.
      *
      * @param \Illuminate\Database\Eloquent\Builder $builder
