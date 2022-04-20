@@ -53,7 +53,7 @@ trait HasContacts
 
     /**
      * Scope query to a given type.
-     * 
+     *
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @param string $type
      * @return \Illuminate\Database\Eloquent\Builder
