@@ -2,6 +2,10 @@
 
 All notable changes to `ally` will be documented in this file.
 
+## v1.2.1 - 2023-02-15
+
+- Add supports for Laravel 10
+
 ## v1.0.1 - 2022-04-20
 
 ## What's Changed
