@@ -2,8 +2,8 @@
 
 namespace Ally\Tests\Mocks;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Ally\Ally;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ContactFactory extends Factory
 {

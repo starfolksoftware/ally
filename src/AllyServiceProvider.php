@@ -2,12 +2,12 @@
 
 namespace Ally;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Ally\Actions\CreateContact;
 use Ally\Actions\DeleteContact;
 use Ally\Actions\UpdateContact;
 use Ally\Commands\InstallCommand;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class AllyServiceProvider extends PackageServiceProvider
 {

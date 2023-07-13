@@ -2,11 +2,11 @@
 
 namespace Ally\Actions;
 
-use Illuminate\Support\Facades\Validator;
 use Ally\Ally;
 use Ally\Contracts\CreatesContacts;
 use Ally\Events\ContactCreated;
 use Ally\Events\CreatingContact;
+use Illuminate\Support\Facades\Validator;
 
 class CreateContact implements CreatesContacts
 {

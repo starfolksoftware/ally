@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Contracts\Auth\Authenticatable;
 use Ally\Tests\TestCase;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 uses(TestCase::class)->in(__DIR__);
 

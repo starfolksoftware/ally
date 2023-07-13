@@ -3,7 +3,6 @@
 namespace Ally\Http\Controllers;
 
 use Ally\Ally;
-use Ally\Contact;
 use Ally\Contracts\CreatesContacts;
 use Ally\Contracts\DeletesContacts;
 use Ally\Contracts\UpdatesContacts;

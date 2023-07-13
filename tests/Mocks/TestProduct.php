@@ -2,9 +2,9 @@
 
 namespace Ally\Tests\Mocks;
 
+use Ally\HasContacts;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Ally\HasContacts;
 
 class TestProduct extends Model
 {

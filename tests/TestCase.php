@@ -2,12 +2,12 @@
 
 namespace Ally\Tests;
 
+use Ally\AllyServiceProvider;
+use Ally\Tests\Mocks\TestUser;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Ally\AllyServiceProvider;
-use Ally\Tests\Mocks\TestUser;
 
 class TestCase extends Orchestra
 {

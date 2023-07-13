@@ -2,8 +2,8 @@
 
 namespace Ally\Tests\Mocks;
 
-use Illuminate\Database\Eloquent\Model;
 use Ally\TeamHasContacts;
+use Illuminate\Database\Eloquent\Model;
 
 class TeamModel extends Model
 {

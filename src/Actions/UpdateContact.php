@@ -2,10 +2,10 @@
 
 namespace Ally\Actions;
 
-use Illuminate\Support\Facades\Validator;
 use Ally\Contracts\UpdatesContacts;
 use Ally\Events\ContactUpdated;
 use Ally\Events\UpdatingContact;
+use Illuminate\Support\Facades\Validator;
 
 class UpdateContact implements UpdatesContacts
 {
