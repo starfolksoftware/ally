@@ -3,8 +3,6 @@
 namespace Ally\Actions;
 
 use Illuminate\Support\Facades\Validator;
-use Ally\Ally;
-use Ally\Contact;
 use Ally\Contracts\UpdatesContacts;
 use Ally\Events\ContactUpdated;
 use Ally\Events\UpdatingContact;
@@ -15,11 +13,11 @@ class UpdateContact implements UpdatesContacts
      * Update a contact.
      *
      * @param  mixed  $user
-     * @param  \Ally\Contact  $contact
+     * @param  mixed  $contact
      * @param  array  $data
-     * @return \Ally\Contact
+     * @return mixed
      */
-    public function __invoke($user, Contact $contact, array $data)
+    public function __invoke($user, $contact, array $data)
     {
         event(new UpdatingContact(user: $user, contact: $contact, data: $data));
 

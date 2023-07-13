@@ -1,11 +1,12 @@
 <?php
 
-use Ally\Contact;
 use Ally\Contracts\UpdatesContacts;
+use Ally\Tests\Mocks\Contact as MocksContact;
 use Ally\Tests\Mocks\TestUser;
 
 beforeAll(function () {
     \Ally\Ally::supportsTeams(false);
+    \Ally\Ally::useContactModel(MocksContact::class);
 });
 
 it('can update a contact', function () {
@@ -13,7 +14,7 @@ it('can update a contact', function () {
 
     $user = TestUser::first();
 
-    $contact = Contact::factory()->create();
+    $contact = \Ally\Ally::newContactModel()->factory()->create();
 
     $contact = $updatesContacts(
         $user,

@@ -32,12 +32,14 @@ class ContactController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Ally\Contact  $contact
+     * @param  mixed  $contact
      * @param  \Ally\Contracts\UpdatesContacts  $updatesContacts
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Contact $contact, UpdatesContacts $updatesContacts)
+    public function update($contact, UpdatesContacts $updatesContacts)
     {
+        $contact = Ally::newContactModel()->findOrFail($contact);
+
         $contact = $updatesContacts(
             request()->user(),
             $contact,
@@ -52,12 +54,14 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Ally\Contact  $contact
+     * @param  mixed  $contact
      * @param  \Ally\Contracts\DeletesContacts  $deletesContacts
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Contact $contact, DeletesContacts $deletesContacts)
+    public function destroy($contact, DeletesContacts $deletesContacts)
     {
+        $contact = Ally::newContactModel()->findOrFail($contact);
+
         $deletesContacts(
             request()->user(),
             $contact

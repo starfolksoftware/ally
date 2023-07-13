@@ -2,11 +2,13 @@
 
 use Ally\Ally;
 use Ally\Contracts\CreatesContacts;
+use Ally\Tests\Mocks\Contact;
 use Ally\Tests\Mocks\TeamModel;
 use Ally\Tests\Mocks\TestUser;
 
 beforeAll(function () {
     Ally::supportsTeams(false);
+    \Ally\Ally::useContactModel(Contact::class);
 });
 
 it('can create a contact with team support', function () {

@@ -1,14 +1,15 @@
 <?php
 
-use Ally\Contact;
+use Ally\Tests\Mocks\Contact as MocksContact;
 use Ally\Tests\Mocks\TestProduct;
 
 beforeAll(function () {
     \Ally\Ally::supportsTeams(false);
+    \Ally\Ally::useContactModel(MocksContact::class);
 });
 
 it('can sync contact to a model', function () {
-    $contact = Contact::factory()->create();
+    $contact = \Ally\Ally::newContactModel()->factory()->create();
 
     list($product) = TestProduct::factory()->count(5)->create();
 
@@ -33,7 +34,7 @@ it('can sync contact to a model', function () {
 });
 
 it('can attach and detach contact to a model', function () {
-    list($contact1, $contact2, $contact3) = Contact::factory()->count(3)->create();
+    list($contact1, $contact2, $contact3) = \Ally\Ally::newContactModel()->factory()->count(3)->create();
 
     list($product) = TestProduct::factory()->count(5)->create();
 

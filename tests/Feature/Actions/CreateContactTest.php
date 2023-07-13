@@ -1,10 +1,12 @@
 <?php
 
 use Ally\Contracts\CreatesContacts;
+use Ally\Tests\Mocks\Contact;
 use Ally\Tests\Mocks\TestUser;
 
 beforeAll(function () {
     \Ally\Ally::supportsTeams(false);
+    \Ally\Ally::useContactModel(Contact::class);
 });
 
 it('can create a tax', function () {

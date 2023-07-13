@@ -2,8 +2,6 @@
 
 namespace Ally\Actions;
 
-use Ally\Ally;
-use Ally\Contact;
 use Ally\Contracts\DeletesContacts;
 use Ally\Events\ContactDeleted;
 use Ally\Events\DeletingContact;
@@ -14,10 +12,10 @@ class DeleteContact implements DeletesContacts
      * Delete a contact.
      *
      * @param  mixed  $user
-     * @param  \Ally\Contact  $contact
+     * @param  mixed  $contact
      * @return void
      */
-    public function __invoke($user, Contact $contact)
+    public function __invoke($user, $contact)
     {
         event(new DeletingContact(user: $user, contact: $contact));
 

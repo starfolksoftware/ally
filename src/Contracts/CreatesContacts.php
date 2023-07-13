@@ -10,7 +10,7 @@ interface CreatesContacts
      * @param  mixed  $user
      * @param  array  $data
      * @param  mixed  $teamId
-     * @return \Ally\Contact
+     * @return mixed
      */
     public function __invoke($user, array $data, $teamId = null);
 }
