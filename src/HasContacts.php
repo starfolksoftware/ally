@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Ally;
+namespace Ally;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;

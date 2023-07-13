@@ -1,13 +1,13 @@
 <?php
 
-namespace StarfolkSoftware\Ally\Tests;
+namespace Ally\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
-use StarfolkSoftware\Ally\AllyServiceProvider;
-use StarfolkSoftware\Ally\Tests\Mocks\TestUser;
+use Ally\AllyServiceProvider;
+use Ally\Tests\Mocks\TestUser;
 
 class TestCase extends Orchestra
 {

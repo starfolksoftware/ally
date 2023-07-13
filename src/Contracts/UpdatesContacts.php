@@ -1,8 +1,8 @@
 <?php
 
-namespace StarfolkSoftware\Ally\Contracts;
+namespace Ally\Contracts;
 
-use StarfolkSoftware\Ally\Contact;
+use Ally\Contact;
 
 interface UpdatesContacts
 {
@@ -10,9 +10,9 @@ interface UpdatesContacts
      * Update an existing contact.
      *
      * @param  mixed  $user
-     * @param  \StarfolkSoftware\Ally\Contact  $contact
+     * @param  \Ally\Contact  $contact
      * @param  array  $data
-     * @return \StarfolkSoftware\Ally\Contact
+     * @return \Ally\Contact
      */
     public function __invoke($user, Contact $contact, array $data);
 }

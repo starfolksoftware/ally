@@ -1,10 +1,12 @@
 <?php
 
-namespace StarfolkSoftware\Ally\Actions;
+namespace Ally\Actions;
 
 use Illuminate\Support\Facades\Validator;
-use StarfolkSoftware\Ally\Ally;
-use StarfolkSoftware\Ally\Contracts\CreatesContacts;
+use Ally\Ally;
+use Ally\Contracts\CreatesContacts;
+use Ally\Events\ContactCreated;
+use Ally\Events\CreatingContact;
 
 class CreateContact implements CreatesContacts
 {
@@ -14,24 +16,16 @@ class CreateContact implements CreatesContacts
      * @param  mixed  $user
      * @param  array  $data
      * @param  mixed  $teamId
-     * @return \StarfolkSoftware\Ally\Contact
+     * @return \Ally\Contact
      */
     public function __invoke($user, array $data, $teamId = null)
     {
-        if (is_callable(Ally::$validateContactCreation)) {
-            call_user_func(
-                Ally::$validateContactCreation,
-                $user,
-                $data
-            );
-        }
+        event(new CreatingContact(user: $user, data: $data));
 
         Validator::make($data, [
             'name' => 'required|string|max:255',
             'type' => 'required|string|max:255',
             'meta' => 'nullable|array',
-            'meta.*.label' => 'required|string|max:255',
-            'meta.*.value' => 'required|string|max:255',
         ])->validateWithBag('createContact');
 
         $fields = collect($data)->only([
@@ -40,8 +34,12 @@ class CreateContact implements CreatesContacts
             'meta',
         ])->toArray();
 
-        return Ally::$supportsTeams ?
+        $contact = Ally::$supportsTeams ?
             Ally::findTeamByIdOrFail($teamId)->contacts()->create($fields) :
             Ally::newContactModel()->create($fields);
+
+        event(new ContactCreated(contact: $contact));
+
+        return $contact;
     }
 }

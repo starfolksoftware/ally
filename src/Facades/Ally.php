@@ -1,11 +1,11 @@
 <?php
 
-namespace StarfolkSoftware\Ally\Facades;
+namespace Ally\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \StarfolkSoftware\Ally\Ally
+ * @see \Ally\Ally
  */
 class Ally extends Facade
 {

@@ -17,8 +17,7 @@
     ],
     "require": {
         "php": "^8.1",
-        "spatie/laravel-package-tools": "^1.9.2",
-        "illuminate/contracts": "^9.0|^10.0"
+        "spatie/laravel-package-tools": "^1.9.2"
     },
     "require-dev": {
         "nunomaduro/collision": "^6.0|^7.0",
@@ -34,13 +33,13 @@
     },
     "autoload": {
         "psr-4": {
-            "StarfolkSoftware\\Ally\\": "src",
-            "StarfolkSoftware\\Ally\\Database\\Factories\\": "database/factories"
+            "Ally\\": "src",
+            "Ally\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "StarfolkSoftware\\Ally\\Tests\\": "tests"
+            "Ally\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -58,10 +57,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "StarfolkSoftware\\Ally\\AllyServiceProvider"
+                "Ally\\AllyServiceProvider"
             ],
             "aliases": {
-                "Ally": "StarfolkSoftware\\Ally\\Facades\\Ally"
+                "Ally": "Ally\\Facades\\Ally"
             }
         }
     },

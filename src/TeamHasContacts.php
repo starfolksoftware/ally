@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Ally;
+namespace Ally;
 
 trait TeamHasContacts
 {

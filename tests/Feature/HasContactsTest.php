@@ -1,10 +1,10 @@
 <?php
 
-use StarfolkSoftware\Ally\Contact;
-use StarfolkSoftware\Ally\Tests\Mocks\TestProduct;
+use Ally\Contact;
+use Ally\Tests\Mocks\TestProduct;
 
 beforeAll(function () {
-    \StarfolkSoftware\Ally\Ally::supportsTeams(false);
+    \Ally\Ally::supportsTeams(false);
 });
 
 it('can sync contact to a model', function () {

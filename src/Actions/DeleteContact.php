@@ -1,10 +1,12 @@
 <?php
 
-namespace StarfolkSoftware\Ally\Actions;
+namespace Ally\Actions;
 
-use StarfolkSoftware\Ally\Ally;
-use StarfolkSoftware\Ally\Contact;
-use StarfolkSoftware\Ally\Contracts\DeletesContacts;
+use Ally\Ally;
+use Ally\Contact;
+use Ally\Contracts\DeletesContacts;
+use Ally\Events\ContactDeleted;
+use Ally\Events\DeletingContact;
 
 class DeleteContact implements DeletesContacts
 {
@@ -12,19 +14,15 @@ class DeleteContact implements DeletesContacts
      * Delete a contact.
      *
      * @param  mixed  $user
-     * @param  \StarfolkSoftware\Ally\Contact  $contact
+     * @param  \Ally\Contact  $contact
      * @return void
      */
     public function __invoke($user, Contact $contact)
     {
-        if (is_callable(Ally::$validateContactDeletion)) {
-            call_user_func(
-                Ally::$validateContactUpdate,
-                $user,
-                $contact
-            );
-        }
+        event(new DeletingContact(user: $user, contact: $contact));
 
         $contact->delete();
+
+        event(new ContactDeleted(contact: $contact));
     }
 }

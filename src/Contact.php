@@ -1,12 +1,13 @@
 <?php
 
-namespace StarfolkSoftware\Ally;
+namespace Ally;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
-class Contact extends Model
+abstract class Contact extends Model
 {
     use HasFactory;
 
@@ -64,5 +65,17 @@ class Contact extends Model
             'id',
             'id'
         );
+    }
+
+    /**
+     * Scope query with the given type.
+     */
+    public function scopeOfType(Builder $query, array|string $type): void
+    {
+        if (is_array($type)) {
+            $query->whereIn('type', $type);
+        } else {
+            $query->where('type', $type);
+        }
     }
 }

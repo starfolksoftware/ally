@@ -1,9 +1,9 @@
 <?php
 
-namespace StarfolkSoftware\Ally\Database\Factories;
+namespace Ally\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use StarfolkSoftware\Ally\Contact;
+use Ally\Contact;
 
 class ContactFactory extends Factory
 {

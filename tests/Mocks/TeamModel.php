@@ -1,9 +1,9 @@
 <?php
 
-namespace StarfolkSoftware\Ally\Tests\Mocks;
+namespace Ally\Tests\Mocks;
 
 use Illuminate\Database\Eloquent\Model;
-use StarfolkSoftware\Ally\TeamHasContacts;
+use Ally\TeamHasContacts;
 
 class TeamModel extends Model
 {

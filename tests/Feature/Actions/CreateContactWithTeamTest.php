@@ -1,9 +1,9 @@
 <?php
 
-use StarfolkSoftware\Ally\Ally;
-use StarfolkSoftware\Ally\Contracts\CreatesContacts;
-use StarfolkSoftware\Ally\Tests\Mocks\TeamModel;
-use StarfolkSoftware\Ally\Tests\Mocks\TestUser;
+use Ally\Ally;
+use Ally\Contracts\CreatesContacts;
+use Ally\Tests\Mocks\TeamModel;
+use Ally\Tests\Mocks\TestUser;
 
 beforeAll(function () {
     Ally::supportsTeams(false);

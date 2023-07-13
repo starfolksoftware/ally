@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Ally\Contracts;
+namespace Ally\Contracts;
 
 interface CreatesContacts
 {
@@ -10,7 +10,7 @@ interface CreatesContacts
      * @param  mixed  $user
      * @param  array  $data
      * @param  mixed  $teamId
-     * @return \StarfolkSoftware\Ally\Contact
+     * @return \Ally\Contact
      */
     public function __invoke($user, array $data, $teamId = null);
 }

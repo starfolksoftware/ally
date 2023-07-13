@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Ally\Commands;
+namespace Ally\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
@@ -21,6 +21,9 @@ class InstallCommand extends Command
         // Publish...
         $this->callSilent('vendor:publish', ['--tag' => 'ally-config', '--force' => true]);
         $this->callSilent('vendor:publish', ['--tag' => 'ally-migrations', '--force' => true]);
+
+        // Models...
+        copy(__DIR__.'/../../stubs/app/Models/Contact.php', app_path('Models/Contact.php'));
 
         // Service Providers...
         copy(__DIR__.'/../../stubs/app/Providers/AllyServiceProvider.php', app_path('Providers/AllyServiceProvider.php'));

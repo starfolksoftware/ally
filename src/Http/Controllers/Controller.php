@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Ally\Http\Controllers;
+namespace Ally\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;

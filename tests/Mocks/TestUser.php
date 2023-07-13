@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Ally\Tests\Mocks;
+namespace Ally\Tests\Mocks;
 
 use Illuminate\Foundation\Auth\User;
 

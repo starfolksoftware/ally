@@ -1,10 +1,10 @@
 <?php
 
-namespace StarfolkSoftware\Ally;
+namespace Ally;
 
-use StarfolkSoftware\Ally\Contracts\CreatesContacts;
-use StarfolkSoftware\Ally\Contracts\DeletesContacts;
-use StarfolkSoftware\Ally\Contracts\UpdatesContacts;
+use Ally\Contracts\CreatesContacts;
+use Ally\Contracts\DeletesContacts;
+use Ally\Contracts\UpdatesContacts;
 
 final class Ally
 {
@@ -27,7 +27,7 @@ final class Ally
      *
      * @var string
      */
-    public static $contactModel = 'StarfolkSoftware\\Ally\\Contact';
+    public static $contactModel = 'App\\Models\\Contact';
 
     /**
      * Indicates if Ally should support teams.
@@ -42,27 +42,6 @@ final class Ally
      * @var string
      */
     public static $teamModel;
-
-    /**
-     * The callback to perform additional validation when creating new contact.
-     *
-     * @var callable
-     */
-    public static $validateContactCreation;
-
-    /**
-     * The callback to perform additional validation when updating a contact.
-     *
-     * @var callable
-     */
-    public static $validateContactUpdate;
-
-    /**
-     * The callback to perform additional validation when deleting a contact.
-     *
-     * @var callable
-     */
-    public static $validateContactDeletion;
 
     /**
      * Get the name of the contact model used by the application.
@@ -157,17 +136,6 @@ final class Ally
     }
 
     /**
-     * Register a class / callback that should be used to validate contact creation.
-     *
-     * @param  callable  $callback
-     * @return void
-     */
-    public static function validateContactCreationUsing(callable $callback)
-    {
-        static::$validateContactCreation = $callback;
-    }
-
-    /**
      * Register a class / callback that should be used to update Contacts.
      *
      * @param  string  $class
@@ -179,17 +147,6 @@ final class Ally
     }
 
     /**
-     * Register a class / callback that should be used to validate contact update.
-     *
-     * @param  callable  $callback
-     * @return void
-     */
-    public static function validateContactUpdateUsing(callable $callback)
-    {
-        static::$validateContactUpdate = $callback;
-    }
-
-    /**
      * Register a class / callback that should be used to delete Contacts.
      *
      * @param  string  $class
@@ -198,17 +155,6 @@ final class Ally
     public static function deleteContactsUsing(string $class)
     {
         app()->singleton(DeletesContacts::class, $class);
-    }
-
-    /**
-     * Register a class / callback that should be used to validate contact deletion.
-     *
-     * @param  callable  $callback
-     * @return void
-     */
-    public static function validateContactDeletionUsing(callable $callback)
-    {
-        static::$validateContactDeletion = $callback;
     }
 
     /**

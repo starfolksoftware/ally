@@ -3,10 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use StarfolkSoftware\Ally\Actions\CreateContact;
-use StarfolkSoftware\Ally\Actions\DeleteContact;
-use StarfolkSoftware\Ally\Actions\UpdateContact;
-use StarfolkSoftware\Ally\Ally;
+use Ally\Actions\CreateContact;
+use Ally\Actions\DeleteContact;
+use Ally\Actions\UpdateContact;
+use Ally\Ally;
 
 class AllyServiceProvider extends ServiceProvider
 {

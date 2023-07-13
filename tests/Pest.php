@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Contracts\Auth\Authenticatable;
-use StarfolkSoftware\Ally\Tests\TestCase;
+use Ally\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
 

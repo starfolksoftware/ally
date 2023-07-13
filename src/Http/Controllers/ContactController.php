@@ -1,26 +1,27 @@
 <?php
 
-namespace StarfolkSoftware\Ally\Http\Controllers;
+namespace Ally\Http\Controllers;
 
-use StarfolkSoftware\Ally\Ally;
-use StarfolkSoftware\Ally\Contact;
-use StarfolkSoftware\Ally\Contracts\CreatesContacts;
-use StarfolkSoftware\Ally\Contracts\DeletesContacts;
-use StarfolkSoftware\Ally\Contracts\UpdatesContacts;
+use Ally\Ally;
+use Ally\Contact;
+use Ally\Contracts\CreatesContacts;
+use Ally\Contracts\DeletesContacts;
+use Ally\Contracts\UpdatesContacts;
 
 class ContactController extends Controller
 {
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \StarfolkSoftware\Ally\Contracts\CreatesContacts  $createsContacts
+     * @param  \Ally\Contracts\CreatesContacts  $createsContacts
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(CreatesContacts $createsContacts)
     {
         $contact = $createsContacts(
             request()->user(),
-            request()->all()
+            request()->all(),
+            request('team_id'),
         );
 
         return request()->wantsJson() ? response()->json(['contact' => $contact]) : redirect()->to(
@@ -31,8 +32,8 @@ class ContactController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \StarfolkSoftware\Ally\Contact  $contact
-     * @param  \StarfolkSoftware\Ally\Contracts\UpdatesContacts  $updatesContacts
+     * @param  \Ally\Contact  $contact
+     * @param  \Ally\Contracts\UpdatesContacts  $updatesContacts
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Contact $contact, UpdatesContacts $updatesContacts)
@@ -51,8 +52,8 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \StarfolkSoftware\Ally\Contact  $contact
-     * @param  \StarfolkSoftware\Ally\Contracts\DeletesContacts  $deletesContacts
+     * @param  \Ally\Contact  $contact
+     * @param  \Ally\Contracts\DeletesContacts  $deletesContacts
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Contact $contact, DeletesContacts $deletesContacts)

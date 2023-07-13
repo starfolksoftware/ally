@@ -1,9 +1,9 @@
 <?php
 
-namespace StarfolkSoftware\Ally\Database\Factories;
+namespace Ally\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use StarfolkSoftware\Ally\Tests\Mocks\TestProduct;
+use Ally\Tests\Mocks\TestProduct;
 
 class TestProductFactory extends Factory
 {

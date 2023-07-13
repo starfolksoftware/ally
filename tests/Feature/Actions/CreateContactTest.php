@@ -1,10 +1,10 @@
 <?php
 
-use StarfolkSoftware\Ally\Contracts\CreatesContacts;
-use StarfolkSoftware\Ally\Tests\Mocks\TestUser;
+use Ally\Contracts\CreatesContacts;
+use Ally\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Ally\Ally::supportsTeams(false);
+    \Ally\Ally::supportsTeams(false);
 });
 
 it('can create a tax', function () {

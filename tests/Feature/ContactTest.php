@@ -1,10 +1,10 @@
 <?php
 
-use StarfolkSoftware\Ally\Contact;
-use StarfolkSoftware\Ally\Tests\Mocks\TestUser;
+use Ally\Contact;
+use Ally\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Ally\Ally::supportsTeams(false);
+    \Ally\Ally::supportsTeams(false);
 });
 
 test('contact can be created', function () {

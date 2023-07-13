@@ -1,13 +1,13 @@
 <?php
 
-namespace StarfolkSoftware\Ally;
+namespace Ally;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use StarfolkSoftware\Ally\Actions\CreateContact;
-use StarfolkSoftware\Ally\Actions\DeleteContact;
-use StarfolkSoftware\Ally\Actions\UpdateContact;
-use StarfolkSoftware\Ally\Commands\InstallCommand;
+use Ally\Actions\CreateContact;
+use Ally\Actions\DeleteContact;
+use Ally\Actions\UpdateContact;
+use Ally\Commands\InstallCommand;
 
 class AllyServiceProvider extends PackageServiceProvider
 {
