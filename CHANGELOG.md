@@ -2,6 +2,10 @@
 
 All notable changes to `ally` will be documented in this file.
 
+## v2.0.0 - 2023-07-13
+
+**Full Changelog**: https://github.com/starfolksoftware/ally/compare/v1.2.1...v2.0.0
+
 ## v1.2.1 - 2023-02-15
 
 - Add supports for Laravel 10
