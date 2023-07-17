@@ -35,7 +35,7 @@ class UpdateContact implements UpdatesContacts
 
         $contact->refresh();
 
-        event(new ContactUpdated(contact: $contact));
+        event(new ContactUpdated(user: $user, contact: $contact, data: $data));
 
         return $contact->refresh();
     }

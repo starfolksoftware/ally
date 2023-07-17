@@ -38,7 +38,7 @@ class CreateContact implements CreatesContacts
             Ally::findTeamByIdOrFail($teamId)->contacts()->create($fields) :
             Ally::newContactModel()->create($fields);
 
-        event(new ContactCreated(contact: $contact));
+        event(new ContactCreated(user: $user, contact: $contact, data: $data));
 
         return $contact;
     }

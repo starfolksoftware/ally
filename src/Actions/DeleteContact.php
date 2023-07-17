@@ -21,6 +21,6 @@ class DeleteContact implements DeletesContacts
 
         $contact->delete();
 
-        event(new ContactDeleted(contact: $contact));
+        event(new ContactDeleted(user: $user, contact: $contact));
     }
 }
