@@ -2,6 +2,14 @@
 
 All notable changes to `ally` will be documented in this file.
 
+## v2.0.1 - 2023-07-17
+
+### What's Changed
+
+- chore: data passed to events by @frknasir in https://github.com/starfolksoftware/ally/pull/3
+
+**Full Changelog**: https://github.com/starfolksoftware/ally/compare/v2.0.0...v2.0.1
+
 ## v2.0.0 - 2023-07-13
 
 **Full Changelog**: https://github.com/starfolksoftware/ally/compare/v1.2.1...v2.0.0
